@@ -8,7 +8,7 @@ weight: 21
 
 ```bash
 cd ~/environment
-curl -s https://raw.githubusercontent.com/brentley/appmeshworkshop/master/templates/appmesh-baseline.yml -o appmesh-baseline.yml
+curl -s https://raw.githubusercontent.com/aws-containers/appmeshworkshop/master/templates/appmesh-baseline.yml -o appmesh-baseline.yml
 ```
 
 * Deploy the CloudFormation stack:

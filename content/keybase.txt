@@ -1,11 +1,11 @@
 ==================================================================
-https://keybase.io/brentley
+https://keybase.io/aws-containers
 --------------------------------------------------------------------
 
 I hereby claim:
 
   * I am an admin of https://appmeshworkshop.com
-  * I am brentley (https://keybase.io/brentley) on keybase.
+  * I am aws-containers (https://keybase.io/aws-containers) on keybase.
   * I have a public key ASCJfE-C_wdx8-OrWdzPVkji7xZL8GRMOzec2cjEsV6YmAo
 
 To do so, I am signing this object:
@@ -17,7 +17,7 @@ To do so, I am signing this object:
       "host": "keybase.io",
       "kid": "0120897c4f82ff0771f3e3ab59dccf5648e2ef164bf0644c3b379cd9c8c4b15e98980a",
       "uid": "a22c231f34f5a746964dbf7a7219fc19",
-      "username": "brentley"
+      "username": "aws-containers"
     },
     "merkle_root": {
       "ctime": 1591035646,
@@ -51,6 +51,6 @@ hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgiXxPgv8HcfPjq1ncz1ZI4u8WS/BkTDs3
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/brentley
+View my publicly-auditable identity here: https://keybase.io/aws-containers
 
 ==================================================================
