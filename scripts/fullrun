@@ -2,14 +2,14 @@
 
 clone_repos() {
   cd ~/environment
-  test -d ecsdemo-frontend || git clone https://github.com/brentley/ecsdemo-frontend.git
-  test -d ecsdemo-nodejs   || git clone https://github.com/brentley/ecsdemo-nodejs.git
-  test -d ecsdemo-crystal  || git clone https://github.com/brentley/ecsdemo-crystal.git
+  test -d ecsdemo-frontend || git clone https://github.com/aws-containers/ecsdemo-frontend.git
+  test -d ecsdemo-nodejs   || git clone https://github.com/aws-containers/ecsdemo-nodejs.git
+  test -d ecsdemo-crystal  || git clone https://github.com/aws-containers/ecsdemo-crystal.git
 }
 
 download_cf_template() {
   cd ~/environment
-  curl -s https://raw.githubusercontent.com/brentley/appmeshworkshop/master/templates/appmesh-baseline.yml -o appmesh-baseline.yml
+  curl -s https://raw.githubusercontent.com/aws-containers/appmeshworkshop/master/templates/appmesh-baseline.yml -o appmesh-baseline.yml
 }
 
 deploy_cf_template() {

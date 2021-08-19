@@ -1,4 +1,4 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/brentley/appmeshworkshop) 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/aws-containers/appmeshworkshop) 
 
 # appmeshworkshop
 
@@ -8,7 +8,7 @@ This is how I set up my environment:
 (I am using gitpod.io for editing)
 
 1. fork the repo to your own github account
-2. prepend `gitpod.io#` to the beginning of your github url. Mine becomes: `https://gitpod.io#github.com/brentley/appmeshworkshop`
+2. prepend `gitpod.io#` to the beginning of your github url. Mine becomes: `https://gitpod.io#github.com/aws-containers/appmeshworkshop`
 3. once gitpod has started, in the terminal, run `npm install && npm run theme`
 This will install the dependencies and clone the theme submodule.
 
