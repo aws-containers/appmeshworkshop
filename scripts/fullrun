@@ -9,7 +9,7 @@ clone_repos() {
 
 download_cf_template() {
   cd ~/environment
-  curl -s https://raw.githubusercontent.com/aws-containers/appmeshworkshop/master/templates/appmesh-baseline.yml -o appmesh-baseline.yml
+  curl -s https://raw.githubusercontent.com/aws-containers/appmeshworkshop/main/templates/appmesh-baseline.yml -o appmesh-baseline.yml
 }
 
 deploy_cf_template() {

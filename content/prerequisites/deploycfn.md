@@ -4,14 +4,14 @@ chapter: false
 weight: 21
 ---
 
-* Download the CloudFormation template:
+- Download the CloudFormation template:
 
 ```bash
 cd ~/environment
-curl -s https://raw.githubusercontent.com/aws-containers/appmeshworkshop/master/templates/appmesh-baseline.yml -o appmesh-baseline.yml
+curl -s https://raw.githubusercontent.com/aws-containers/appmeshworkshop/main/templates/appmesh-baseline.yml -o appmesh-baseline.yml
 ```
 
-* Deploy the CloudFormation stack:
+- Deploy the CloudFormation stack:
 
 ```bash
 # Define environment variable
@@ -34,7 +34,7 @@ else
 fi
 ```
 
-___
+---
 
 The CloudFormation template will launch the following:
 
