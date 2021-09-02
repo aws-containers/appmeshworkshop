@@ -11,6 +11,8 @@ Let's start by creating a new namespace and a deployment for the NodeJs applicat
 
 
 ```bash
+NODEJS_ECR_REPO=$(jq < cfn-output.json -r '.NodeJSEcrRepo')
+
 kubectl create namespace appmesh-workshop-ns
 
 # Create directory for eks scripts
@@ -41,7 +43,7 @@ spec:
         app: nodejs-app
     spec:
       containers:
-      - image: aws-containers/ecsdemo-nodejs:latest
+      - image: $NODEJS_ECR_REPO:latest
         imagePullPolicy: Always
         name: nodejs-app
         ports:
