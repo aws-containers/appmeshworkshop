@@ -64,7 +64,7 @@ mainSteps:
           --log-opt awslogs-group=appmesh-workshop-frontend-envoy \
           --log-opt tag=ec2/envoy/{{.FullID}} \
           -u {{ignoredUID}} --network host \
-          840364872350.dkr.ecr.{{region}}.amazonaws.com/aws-appmesh-envoy:v1.11.2.0-prod
+          840364872350.dkr.ecr.{{region}}.amazonaws.com/aws-appmesh-envoy:v1.19.1.0-prod
 - action: aws:runShellScript
   name: installXRay
   inputs:
