@@ -14,37 +14,25 @@ Additionaly, there is the physical deployment of the application itself to a com
 
 ```bash
 cat <<-'EOF' > ~/environment/ecsdemo-crystal/add_time_ms.patch
-From beb964253b921a0a34ed45bac0ab052667523441 Mon Sep 17 00:00:00 2001
-From:
+From fc6ce0c76b394928c3008f128efd2fcaf1ff45c3 Mon Sep 17 00:00:00 2001
+From: 
 Date:
-Subject: [PATCH 1/2] add canary hash
+Subject: [PATCH] Add epoch timestamp and canary hash
 
 ---
  code_hash.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ src/server.cr | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/code_hash.txt b/code_hash.txt
-index a7c041f..dbd1857 100644
+index 510eef0..dbd1857 100644
 --- a/code_hash.txt
 +++ b/code_hash.txt
 @@ -1 +1 @@
--NOHASH
+-ed106ce
 +CANARY
---
-2.22.0
-
-
-From 23a8640575f0fcc5b5fac4936d51a5dff656c281 Mon Sep 17 00:00:00 2001
-From:
-Date:
-Subject: [PATCH 2/2] add time ms
-
----
- src/server.cr | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
 diff --git a/src/server.cr b/src/server.cr
-index 2fad0ea..b08ae32 100644
+index c6b1403..2f6e8c0 100644
 --- a/src/server.cr
 +++ b/src/server.cr
 @@ -1,5 +1,6 @@
@@ -62,11 +50,11 @@ index 2fad0ea..b08ae32 100644
          context.response.content_type = "text/plain"
 -        context.response.print "Crystal backend: Hello! from #{az_message} commit #{code_hash}"
 +        context.response.print "Crystal backend: Hello! from #{az_message} commit #{code_hash} at #{epoch_ms}"
-       elsif context.request.path == "/health"
-         context.response.content_type = "text/plain"
-         context.response.print "Healthy!"
---
-2.22.0
+       elsif context.request.path == "/crystal/api" || context.request.path == "/crystal/api/"
+         context.response.content_type = "application/json"
+         context.response.print %Q({"from":"Crystal backend", "message": "#{az_message}", "commit": "#{code_hash.chomp}"})
+-- 
+2.32.0
 
 
 EOF
