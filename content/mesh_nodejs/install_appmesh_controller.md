@@ -6,9 +6,11 @@ weight: 10
 
 [AWS App Mesh Controller For K8s](https://github.com/aws/aws-app-mesh-controller-for-k8s) manages App Mesh resources within your Kubernetes clusters. The controller is accompanied by Custom Resource Definitions (CRDs) that allow you to define App Mesh components such as Meshes and VirtualNodes using the Kubernetes API just as you define native Kubernetes objects such as Deployments and Services. These custom resources map to App Mesh API objects which the controller manages for you. The controller watches these custom resources for changes and reflects those changes into the App Mesh API.
 
-The controller is installed via Helm Chart. Follow [this link](https://helm.sh/docs/intro/install/) to install the latest version of Helm. Once done, you should see a version of 3.0 or higher.
+The controller is installed via Helm Chart. You can install helm with the following command. Please verify that you have installed Helm 3.0 or later.
 
 ```bash
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
 helm version --short
 ```
 
