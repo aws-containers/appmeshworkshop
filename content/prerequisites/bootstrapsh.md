@@ -142,7 +142,7 @@ cat > ~/environment/scripts/build-containers <<-"EOF"
 CRYSTAL_ECR_REPO=$(jq < cfn-output.json -r '.CrystalEcrRepo')
 NODEJS_ECR_REPO=$(jq < cfn-output.json -r '.NodeJSEcrRepo')
 
-$(aws ecr get-login --no-include-email)
+$(aws ecr get-login-password | docker login --username AWS --password-stdin $CRYSTAL_ECR_REPO)
 
 docker build -t crystal-service ecsdemo-crystal
 docker tag crystal-service:latest $CRYSTAL_ECR_REPO:vanilla
