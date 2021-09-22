@@ -86,6 +86,9 @@ spec:
             name: nodejs
 ---
 EOF
+
+# Apply the configuration
+kubectl apply -f  ~/environment/eks-scripts/app-mesh-virtual-gateway.yml
 ```
 If you take a close look at the previous manifest file, you will notice we added one GatewayRoute with a single route for path /eks. In practical terms this means any requests that arrive at the NLB with path /eks will get rerouted to the Virtual Service nodeJS.
 
@@ -97,13 +100,11 @@ Connect to the EC2 instance in order to test reachability from external requests
 EXTERNAL_EC2=$(aws ec2 describe-instances --filters Name=tag:Usage,Values=ExternalEC2Instance | jq -r '.Reservations[].Instances[].InstanceId')
 
 aws ssm start-session --target $EXTERNAL_EC2
-Starting session with SessionId: xxxxx-03f74a1b6fabf65d4
 ```
 
 We add the Kube context for EKS connectivity 
 ```bash
 aws eks --region us-west-2 update-kubeconfig --name appmesh-workshop
-Added new context arn:aws:eks:xxxxx:xxxxxxx:cluster/appmesh-workshop to /home/ssm-user/.kube/config
 ```
 
 And finally, let’s get the FQDN of the NLB that was created as part of the K8s Service of type LoadBalancer.
