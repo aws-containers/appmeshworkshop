@@ -86,6 +86,8 @@ spec:
             name: nodejs
 ---
 EOF
+
+kubectl apply -f ~/environment/eks-scripts/app-mesh-virtual-gateway.yml
 ```
 If you take a close look at the previous manifest file, you will notice we added one GatewayRoute with a single route for path /eks. In practical terms this means any requests that arrive at the NLB with path /eks will get rerouted to the Virtual Service nodeJS.
 
