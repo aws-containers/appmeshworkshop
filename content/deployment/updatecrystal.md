@@ -63,7 +63,7 @@ EOF
 * First, take a look at what changes are in the patch.
 
 ```bash
-git apply --stat ecsdemo-crystal/add_time_ms.patch
+git apply --stat ~/environment/ecsdemo-crystal/add_time_ms.patch
 ```
 
 * Run **git apply** to apply the patch.
@@ -77,9 +77,9 @@ git -C ~/environment/ecsdemo-crystal apply add_time_ms.patch
 ```bash
 CRYSTAL_ECR_REPO=$(jq < cfn-output.json -r '.CrystalEcrRepo')
 
-$(aws ecr get-login --no-include-email)
+aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin $CRYSTAL_ECR_REPO
 
-docker build -t crystal-service ecsdemo-crystal
+docker build -t crystal-service ~/environment/ecsdemo-crystal
 docker tag crystal-service:latest $CRYSTAL_ECR_REPO:epoch
 docker push $CRYSTAL_ECR_REPO:epoch
 ```
