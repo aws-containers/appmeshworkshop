@@ -876,20 +876,20 @@ Resources:
                   yum install -y git gcc gcc-c++ make readline-devel openssl-devel sqlite-devel gmp-devel jq
                   
                   # Install rbenv
-                  git clone git://github.com/rbenv/rbenv.git /tmp/.rbenv
+                  git clone https://github.com/rbenv/rbenv.git /tmp/.rbenv
                   echo 'export PATH="/tmp/.rbenv/bin:/usr/local/bin:$PATH"' >> /tmp/.bashrc
                   echo 'eval "$(rbenv init -)"' >> /tmp/.bashrc
                   source /tmp/.bashrc
 
                   # Install ruby-build
-                  git clone git://github.com/rbenv/ruby-build.git /tmp/ruby-build
+                  git clone https://github.com/rbenv/ruby-build.git /tmp/ruby-build
                   cd /tmp/ruby-build
                   ./install.sh
 
                   rbenv install 2.5.1 && rbenv global 2.5.1
 
                   # Install rails and bundler
-                  gem install --force rails bundler
+                  gem install --force rails:4.2.10 bundler:1.17.3
                   gem update --system
 
                   # Clone the repo and build the app
