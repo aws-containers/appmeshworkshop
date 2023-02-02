@@ -886,7 +886,7 @@ Resources:
                   cd /tmp/ruby-build
                   ./install.sh
 
-                  rbenv install 2.5.1 && rbenv global 2.5.1
+                  rbenv install 3.0.0 && rbenv global 3.0.0
 
                   # Install rails and bundler
                   gem install --force rails:4.2.10 bundler:1.17.3
