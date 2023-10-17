@@ -890,7 +890,7 @@ Resources:
 
                   # Install rails and bundler
                   gem install --force rails:4.2.10 bundler:1.17.3
-                  gem update --system
+                  #gem update --system
 
                   # Clone the repo and build the app
                   export RUBY_ROOT=/tmp/ecsdemo-frontend
