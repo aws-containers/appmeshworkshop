@@ -76,7 +76,7 @@
                   <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   {{ end }}
                   <span class="links">
-                    {{ template "breadcrumb" dict "page" . "value" .Title }}   
+                    {{ template "breadcrumb" dict "page" . "value" .Title }}
                   </span>
                 </div>
                 {{ if $toc }}
@@ -98,8 +98,19 @@
           {{$parent := .page.Parent }}
           {{ if $parent }}
             {{ $value := (printf "<a href='%s'>%s</a> > %s" $parent.URL $parent.Title .value) }}
-            {{ template "breadcrumb" dict "page" $parent "value" $value }} 
+            {{ template "breadcrumb" dict "page" $parent "value" $value }}
           {{else}}
             {{.value|safeHTML}}
           {{end}}
         {{end}}
+
+        <div class="notices warning">
+          <p>
+            Please note that this workshop has been archived and is not actively maintained.
+            On September 30, 2026, AWS will discontinue support
+            for AWS App Mesh. For more information, visit
+            this <a
+            href="https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/"
+            target="_blank">blog post</a>.
+          </p>
+        </div>
