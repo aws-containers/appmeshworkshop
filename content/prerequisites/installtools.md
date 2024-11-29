@@ -29,7 +29,7 @@ sudo chmod +x /usr/local/bin/kubectl
 echo 'source <(kubectl completion bash)' >>~/.bashrc
 source ~/.bashrc
 
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/v0.127.0/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv -v /tmp/eksctl /usr/local/bin
 
 if ! [ -x "$(command -v jq)" ] || ! [ -x "$(command -v envsubst)" ] || ! [ -x "$(command -v kubectl)" ] || ! [ -x "$(command -v eksctl)" ] || ! [ -x "$(command -v ssm-cli)" ]; then
